@@ -35,12 +35,6 @@ namespace SystemArtEsportivos
         {
             AbrirNovaJanela(new Funcionario());
         }
-
-        private void btnInicio_Click(object sender, EventArgs e)
-        {
-           
-        }
-
         private void lblTitulo_Click(object sender, EventArgs e)
         {
 

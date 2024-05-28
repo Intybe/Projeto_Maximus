@@ -116,7 +116,7 @@
             this.txtQtd.Font = new System.Drawing.Font("Microsoft Tai Le", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQtd.Location = new System.Drawing.Point(103, 149);
             this.txtQtd.Name = "txtQtd";
-            this.txtQtd.Size = new System.Drawing.Size(25, 29);
+            this.txtQtd.Size = new System.Drawing.Size(139, 29);
             this.txtQtd.TabIndex = 61;
             // 
             // lblQtd
@@ -156,7 +156,7 @@
             this.txtCodFunc.Font = new System.Drawing.Font("Microsoft Tai Le", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodFunc.Location = new System.Drawing.Point(144, 62);
             this.txtCodFunc.Name = "txtCodFunc";
-            this.txtCodFunc.Size = new System.Drawing.Size(40, 29);
+            this.txtCodFunc.Size = new System.Drawing.Size(98, 29);
             this.txtCodFunc.TabIndex = 57;
             // 
             // lblCodFunc
@@ -206,6 +206,7 @@
             this.ClientSize = new System.Drawing.Size(665, 349);
             this.Controls.Add(this.pnCadastros);
             this.Name = "Pedido";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = " ";
             this.Load += new System.EventHandler(this.Pedido_Load);
             this.pnCadastros.ResumeLayout(false);

@@ -22,9 +22,9 @@ namespace SystemArtEsportivos
         {
             InitializeComponent();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.WindowState = FormWindowState.Maximized;
+           // this.WindowState = FormWindowState.Normal;
             this.StartPosition = FormStartPosition.CenterScreen;
-            this.Size = new Size(800, 600);
+            this.Size = new Size(408, 372);
 
         }
 
@@ -83,6 +83,16 @@ namespace SystemArtEsportivos
         }
 
         private void lblLogin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblSenha_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
         {
 
         }

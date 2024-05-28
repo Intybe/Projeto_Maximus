@@ -234,6 +234,7 @@
             this.ClientSize = new System.Drawing.Size(661, 351);
             this.Controls.Add(this.pnCadastros);
             this.Name = "Produto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Produto";
             this.Load += new System.EventHandler(this.Produto_Load);
             this.pnCadastros.ResumeLayout(false);

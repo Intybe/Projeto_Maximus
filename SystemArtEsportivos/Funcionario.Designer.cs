@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pnCadastros = new System.Windows.Forms.Panel();
+            this.txtCodFunc = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.btnAlterar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
@@ -43,7 +44,6 @@
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtCodFunc = new System.Windows.Forms.TextBox();
             this.pnCadastros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).BeginInit();
             this.SuspendLayout();
@@ -70,6 +70,16 @@
             this.pnCadastros.Name = "pnCadastros";
             this.pnCadastros.Size = new System.Drawing.Size(659, 344);
             this.pnCadastros.TabIndex = 40;
+            // 
+            // txtCodFunc
+            // 
+            this.txtCodFunc.BackColor = System.Drawing.SystemColors.Control;
+            this.txtCodFunc.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCodFunc.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodFunc.Location = new System.Drawing.Point(24, 47);
+            this.txtCodFunc.Name = "txtCodFunc";
+            this.txtCodFunc.Size = new System.Drawing.Size(10, 15);
+            this.txtCodFunc.TabIndex = 68;
             // 
             // button1
             // 
@@ -208,16 +218,6 @@
             this.label5.Text = "CADASTRO DE FUNCIONÁRIO";
             this.label5.Click += new System.EventHandler(this.label5_Click_1);
             // 
-            // txtCodFunc
-            // 
-            this.txtCodFunc.BackColor = System.Drawing.SystemColors.Control;
-            this.txtCodFunc.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCodFunc.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodFunc.Location = new System.Drawing.Point(24, 47);
-            this.txtCodFunc.Name = "txtCodFunc";
-            this.txtCodFunc.Size = new System.Drawing.Size(10, 15);
-            this.txtCodFunc.TabIndex = 68;
-            // 
             // Funcionario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -225,6 +225,7 @@
             this.ClientSize = new System.Drawing.Size(662, 348);
             this.Controls.Add(this.pnCadastros);
             this.Name = "Funcionario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Funcionário";
             this.Load += new System.EventHandler(this.Funcionario_Load);
             this.pnCadastros.ResumeLayout(false);
