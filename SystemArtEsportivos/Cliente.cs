@@ -171,7 +171,7 @@ namespace SystemArtEsportivos
 
         private void dgvCliente_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            carregarClientes();
+           
 
         }
         private void carregarClientes()
@@ -184,13 +184,14 @@ namespace SystemArtEsportivos
                 txtCodCli.Text = dgvCliente.SelectedRows[0].Cells[0].Value.ToString();  //PEGA O VALOR DO PRIMEIRO CAMPO DA TABELA(CODIGO POR EXEMPLO CASO TENHA)
                 txtCPF.Text = dgvCliente.SelectedRows[0].Cells[1].Value.ToString();
                 txtNome.Text = dgvCliente.SelectedRows[0].Cells[2].Value.ToString();//PEGA O O NOME E PASSAR NO DATAGRID
-                txtNumeroEnd.Text = dgvCliente.SelectedRows[0].Cells[3].Value.ToString();
-                txtTelefone.Text = dgvCliente.SelectedRows[0].Cells[4].Value.ToString();
-                txtEmail.Text = dgvCliente.SelectedRows[0].Cells[5].Value.ToString();//PEGA O EMAIL E PASSAR NO DATAGRID
-                txtCEP.Text = dgvCliente.SelectedRows[0].Cells[6].Value.ToString();
-                txtBairro.Text = dgvCliente.SelectedRows[0].Cells[7].Value.ToString();
-                txtCidade.Text = dgvCliente.SelectedRows[0].Cells[8].Value.ToString();
-                txtUF.Text = dgvCliente.SelectedRows[0].Cells[9].Value.ToString();
+                txtTelefone.Text = dgvCliente.SelectedRows[0].Cells[3].Value.ToString();
+                txtEmail.Text = dgvCliente.SelectedRows[0].Cells[4].Value.ToString();//PEGA O EMAIL E PASSAR NO DATAGRID
+                txtCEP.Text = dgvCliente.SelectedRows[0].Cells[5].Value.ToString();
+                txtNumeroEnd.Text = dgvCliente.SelectedRows[0].Cells[6].Value.ToString();
+                txtLogadouro.Text = dgvCliente.SelectedRows[0].Cells[7].Value.ToString();
+                txtBairro.Text = dgvCliente.SelectedRows[0].Cells[8].Value.ToString();
+                txtCidade.Text = dgvCliente.SelectedRows[0].Cells[9].Value.ToString();
+                txtUF.Text = dgvCliente.SelectedRows[0].Cells[10].Value.ToString();
                 //DESCONECTA O BANCO DE DADOS
                 con.DesConnectarBD();
 
@@ -313,7 +314,7 @@ namespace SystemArtEsportivos
                     //COMO ESTAMOS USANDO MYSQL PRECISA SER CHAMANDO O MYSQLCOMMAND NA INSTANCIA
                     MySqlCommand cmd = new MySqlCommand();
                     //FAZENDO O SELECT NA TABELA DO BANCO
-                    cmd.CommandText = "select * from tbcliente Inner join tbEndereco";
+                    cmd.CommandText = "select * from tbcliente";
 
                     //ABRE A CONEXÃO DO c# COM MYSQL
                     cmd.Connection = con.ConnectarBD();
@@ -368,14 +369,14 @@ namespace SystemArtEsportivos
                 //FAZ O UPDATE NO BANCO DE DADOS
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = con.ConnectarBD();
-                cmd.CommandText = "update spInsert_tbCliente set CPF = @CPF, Nome = @nomeCli, Telefone = @telefone, Email = @email, CEP=@cepCli, Logradouro =@logradouro, numEnd=@numEnd,Bairro=@bairro, Cidade=@cidade, Estado=@UF where codCli= " + txtCodCli.Text;
-                cmd.Parameters.Add("@CPF", MySqlDbType.Decimal).Value = decimal.Parse(txtCPF.Text);
+                cmd.CommandText = "update tbCliente set CPF = @CPF, nomeCli = @nomeCli, Telefone = @telefone, Email = @email, cepCli=@cepCli, Logradouro =@logradouro, numEnd=@numEnd,Bairro=@bairro, Cidade=@cidade, uf=@UF where codCli= " + txtCodCli.Text;
+                cmd.Parameters.Add("@CPF", MySqlDbType.VarChar).Value = txtCPF.Text;
                 cmd.Parameters.Add("@nomeCli", MySqlDbType.VarChar).Value = txtNome.Text; //PEGA O VALOR DO NOME
-                cmd.Parameters.Add("@telefone", MySqlDbType.Decimal).Value = decimal.Parse(txtTelefone.Text);
+                cmd.Parameters.Add("@telefone", MySqlDbType.VarChar).Value = txtTelefone.Text;
                 cmd.Parameters.Add("@email", MySqlDbType.VarChar).Value = txtEmail.Text; // PEGA O VALOR DO TELEFONE
                 cmd.Parameters.Add("@cepCli", MySqlDbType.VarChar).Value = txtCEP.Text;
+                cmd.Parameters.Add("@numEnd", MySqlDbType.VarChar).Value = txtNumeroEnd.Text;
                 cmd.Parameters.Add("@logradouro", MySqlDbType.VarChar).Value = txtLogadouro.Text;
-                cmd.Parameters.Add("@numEnd", MySqlDbType.Decimal).Value = decimal.Parse(txtNumeroEnd.Text);
                 cmd.Parameters.Add("@bairro", MySqlDbType.VarChar).Value = txtBairro.Text;
                 cmd.Parameters.Add("@cidade", MySqlDbType.VarChar).Value = txtCidade.Text;
                 cmd.Parameters.Add("@UF", MySqlDbType.VarChar).Value = txtUF.Text;
@@ -428,6 +429,12 @@ namespace SystemArtEsportivos
                 }
 
             }
+        }
+
+
+        private void dgvCliente_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            carregarClientes();
         }
     }
 }

@@ -123,7 +123,7 @@ namespace SystemArtEsportivos
 
         private void dgvFuncionario_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            carregarFuncionarios();
+            
 
         }
 
@@ -135,9 +135,9 @@ namespace SystemArtEsportivos
                 //ABRE A CONEXÃO DO BANCO COM C#
                 con.ConnectarBD();
                 txtCodFunc.Text = dgvFuncionario.SelectedRows[0].Cells[0].Value.ToString();  //PEGA O VALOR DO PRIMEIRO CAMPO DA TABELA(CODIGO POR EXEMPLO CASO TENHA)
-                txtNome.Text = dgvFuncionario.SelectedRows[0].Cells[2].Value.ToString();//PEGA O O NOME E PASSAR NO DATAGRID
-                txtUsuario.Text = dgvFuncionario.SelectedRows[0].Cells[3].Value.ToString();
-                txtSenha.Text = dgvFuncionario.SelectedRows[0].Cells[4].Value.ToString();
+                txtNome.Text = dgvFuncionario.SelectedRows[0].Cells[1].Value.ToString();//PEGA O O NOME E PASSAR NO DATAGRID
+                txtUsuario.Text = dgvFuncionario.SelectedRows[0].Cells[2].Value.ToString();
+                txtSenha.Text = dgvFuncionario.SelectedRows[0].Cells[3].Value.ToString();
 
                 //DESCONECTA O BANCO DE DADOS
                 con.DesConnectarBD();
@@ -270,6 +270,11 @@ namespace SystemArtEsportivos
                     MessageBox.Show(erro.Message);
                 }
             }
+        }
+
+        private void dgvFuncionario_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            carregarFuncionarios();
         }
     }
 }

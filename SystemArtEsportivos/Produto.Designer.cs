@@ -72,6 +72,7 @@
             this.pnCadastros.Name = "pnCadastros";
             this.pnCadastros.Size = new System.Drawing.Size(659, 354);
             this.pnCadastros.TabIndex = 47;
+
             // 
             // button5
             // 
@@ -125,6 +126,7 @@
             this.dgvProduto.Size = new System.Drawing.Size(223, 99);
             this.dgvProduto.TabIndex = 58;
             this.dgvProduto.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFuncionario_CellContentClick);
+            this.dgvProduto.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgvProduto_MouseDoubleClick);
             // 
             // txtPesquisar
             // 
