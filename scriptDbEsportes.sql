@@ -11,7 +11,10 @@ Create table tbCliente(
     email varchar(200) not null,
     cepCli char(8) not null,
     numEnd decimal(6,0) not null,
-    compEnd varchar(50)
+    logradouro varchar(200) not null,
+    bairro varchar(200) not null,
+    cidade varchar(200) not null, 
+    uf char(2) not null
 );
 
 Create table tbFuncionario(
@@ -21,28 +24,6 @@ Create table tbFuncionario(
     senha int not null
 );
 
-Create table tbEndereco(
-	CEP char(8) PRIMARY KEY,
-    logradouro varchar(200) not null,
-    bairro int not null,
-    cidade int not null,
-    UF int not null
-);
-
-Create table tbBairro(
-	bairroId int auto_increment PRIMARY KEY,
-    nomeBairro varchar(200) not null
-);
-
-Create table tbCidade(
-	cidadeId int auto_increment PRIMARY KEY,
-    nomeCidade varchar(200) not null
-);
-
-Create table tbEstado(
-	UFId int auto_increment PRIMARY KEY,
-    nomeEstado char(2) not null
-);
 
 Create table tbProduto(
 	codBarras decimal(14,0) PRIMARY KEY,
@@ -69,12 +50,6 @@ Create table tbItemPedido(
 
 
 -- Adicionando os relacionamentos --
-Alter table tbEndereco ADD FOREIGN KEY (bairro) REFERENCES tbBairro(bairroId);
-Alter table tbEndereco ADD FOREIGN KEY(cidade) references tbCidade(cidadeId);
-Alter table tbEndereco ADD FOREIGN KEY(UF) references tbEstado(UFId);
-
-Alter table tbCliente ADD FOREIGN KEY(cepCli) references tbEndereco(CEP);
-
 Alter table tbPedido ADD FOREIGN KEY(cliente) references tbCliente(codCli);
 
 Alter table tbPedido ADD FOREIGN KEY(funcionario) references tbFuncionario(codFunc);
@@ -85,41 +60,18 @@ Alter table tbItemPedido ADD FOREIGN KEY(codBarras) references tbProduto(codBarr
 
 -- Criando a procedure de cadastro de clientes --
 Delimiter $$
-Create procedure spInsert_tbCliente(vCPF decimal(11,0), vNome varchar(200), vTelefone decimal(11,0), vEmail varchar(200), vCEP char(8), vLogradouro varchar(200), vnumEnd decimal(6,0), vcompEnd varchar(50), vBairro varchar(200), vCidade varchar(200), vEstado char(2))
+Create procedure spInsert_tbCliente(vCPF decimal(11,0), vNome varchar(200), vTelefone decimal(11,0), vEmail varchar(200), 
+vCEP char(8), vLogradouro varchar(200), vnumEnd decimal(6,0), vBairro varchar(200), vCidade varchar(200), vEstado char(2))
 Begin
 	If not exists(Select CPF from tbCliente where CPF = vCPF) then
-		
-			if not exists (Select CEP from tbEndereco where CEP = vCEP) then
-				
-                if not exists(Select nomeBairro from tbBairro where nomeBairro = vBairro) then
-					insert into tbBairro(nomeBairro)
-									values(vBairro);
-				End if;
-                  
-				if not exists(Select nomeCidade from tbCidade where nomeCidade = vCidade) then
-					insert into tbCidade(nomeCidade)
-									values(vCidade);
-				End if;
-                
-                if not exists(Select nomeEstado from tbEstado where nomeEstado = vEstado) then
-					insert into tbEstado(nomeEstado)
-									values(vEstado);
-				End if;
-                
-				insert into tbEndereco(CEP, logradouro, bairro, cidade, UF)
-								values(vCEP, vlogradouro,
-									  (Select bairroId from tbBairro where nomeBairro = vBairro),
-                                      (Select cidadeId from tbCidade where nomeCidade = vCidade),
-                                      (Select UFId from tbEstado where nomeEstado = vEstado));
-		end if;
-
-			Insert into tbCliente(CPF, nomeCli, telefone, email, cepCli, numEnd, compEnd)
-							values(vCPF, vNome, vTelefone, vEmail, vCEP, vnumEnd, vcompEnd);
+			Insert into tbCliente(CPF, nomeCli, telefone, email, cepCli, numEnd, logradouro, bairro, cidade, uf)
+							values(vCPF, vNome, vTelefone, vEmail, vCEP, vnumEnd, vlogradouro, vbairro, vcidade, vestado);
     else
 		Select * from tbCliente where CPF = vCPF;
 	end if;
 End $$
-
+ 
+ 
 -- Criando o a procedure de cadastro de funcionário --
 Delimiter $$
 Create procedure spInsert_tbFuncionario(vNome varchar(200), vUsuario varchar(20), vSenha int)
@@ -127,6 +79,7 @@ Begin
 	Insert into tbFuncionario(nomeFunc, usuario, senha)
 						values(vNome, vUsuario, vSenha);
 End $$
+
 
 -- Criando a procedure de cadastro de produtos --
 Delimiter $$
@@ -178,6 +131,7 @@ Begin
 	End if;
 End $$
 
+
 -- Criando a procedure para aumentar o estoque dos produtos --
 Delimiter $$
 Create procedure spUpdate_tbProduto(vcodBarras decimal(14,0), vQtd int)
@@ -209,6 +163,8 @@ Begin
 		Select "Código do produto inválido";
 	End if;
 End $$
+
+Select * from tbCliente;
 
 -- Criando Procedure para selecionar o total do pedido --
 Delimiter $$
