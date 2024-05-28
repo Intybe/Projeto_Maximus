@@ -31,7 +31,7 @@ namespace SystemArtEsportivos
             txtQtd.Enabled = true;
 
             btnNovo.Enabled = false;
-            txtCPFCli.Focus();
+            // foi tirado o focus
         }
 
         //MÉTODO limpa campos
