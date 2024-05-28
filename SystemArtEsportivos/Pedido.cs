@@ -32,6 +32,7 @@ namespace SystemArtEsportivos
 
             btnNovo.Enabled = false;
             // foi tirado o focus
+            // foi tirado o focus Marcos
         }
 
         //MÉTODO limpa campos
