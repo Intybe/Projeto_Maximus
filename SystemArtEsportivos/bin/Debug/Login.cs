@@ -91,10 +91,13 @@ namespace SystemArtEsportivos
         {
 
         }
+<<<<<<< HEAD
 
         private void txtUsuario_TextChanged(object sender, EventArgs e)
         {
 
         }
+=======
+>>>>>>> d2b43cf549eb6445dc6e858e9404feed65a39f9d
     }
 }

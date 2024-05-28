@@ -121,7 +121,11 @@
   <data name="pictureBox1.ErrorImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAB4AAAAQ4CAIAAABnsVYUAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+<<<<<<< HEAD
         wAAADsABataJCQAAbf9JREFUeF7s3Qd4FVX+P+DdBOyuJnQhhd6roKKCYu+uvbv23ntbXfva1l7XtnZX
+=======
+        wgAADsIBFShKgAAAbf9JREFUeF7s3Qd4FVX+P+DdBOyuJnQhhd6roKKCYu+uvbv23ntbXfva1l7XtnZX
+>>>>>>> d2b43cf549eb6445dc6e858e9404feed65a39f9d
         XXXtvfeGSBEQ6b2TEELK/f8nuSM/9qKYQE7IDe/7fB8ec+/MmXPOzB2f55PJuX/4fwAAAAAAEIAAGgAA
         AACAIATQAAAAAAAEIYAGAAAAACAIATQAAAAAAEEIoAEAAAAACEIADQAAAABAEAJoAAAAAACCEEADAAAA
         ABCEABoAAAAAgCAE0AAAAAAABCGABgAAAAAgCAE0AAAAAABBCKABAAAAAAhCAA0AAAAAQBACaAAAAAAA
@@ -593,6 +597,7 @@
         BDQAAAAAAAkBDQAAAABAQkADAAAAAJAQ0AAAAAAABLYD4u3JTLPz5hYAAAAASUVORK5CYII=
 </value>
   </data>
+<<<<<<< HEAD
   <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAO4AAAA+CAYAAAAs0CcNAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -652,4 +657,6 @@
         jUP7hZhdRy9yBvm5qyU+sM0iCSH+DzF8c0aGranVAAAAAElFTkSuQmCC
 </value>
   </data>
+=======
+>>>>>>> d2b43cf549eb6445dc6e858e9404feed65a39f9d
 </root>

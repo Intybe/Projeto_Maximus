@@ -85,9 +85,12 @@
             // btnLogar
             // 
             this.btnLogar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(90)))), ((int)(((byte)(13)))));
+<<<<<<< HEAD
             this.btnLogar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(90)))), ((int)(((byte)(13)))));
             this.btnLogar.FlatAppearance.BorderSize = 30;
             this.btnLogar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+=======
+>>>>>>> d2b43cf549eb6445dc6e858e9404feed65a39f9d
             this.btnLogar.Font = new System.Drawing.Font("Yu Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogar.ForeColor = System.Drawing.Color.Snow;
             this.btnLogar.Location = new System.Drawing.Point(142, 246);
@@ -116,6 +119,17 @@
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(120, 32);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.ErrorImage")));
+            this.pictureBox1.Image = global::SystemArtEsportivos.Properties.Resources.estrelas;
+            this.pictureBox1.Location = new System.Drawing.Point(127, 60);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(119, 31);
             this.pictureBox1.TabIndex = 13;
             this.pictureBox1.TabStop = false;
             // 

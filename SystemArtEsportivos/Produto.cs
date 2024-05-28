@@ -64,7 +64,7 @@ namespace SystemArtEsportivos
 
         private void dgvFuncionario_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            carregarProdutos();
+            
         }
 
         private void carregarProdutos()
@@ -75,9 +75,9 @@ namespace SystemArtEsportivos
                 //ABRE A CONEXÃO DO BANCO COM C#
                 con.ConnectarBD();
                 txtCodBarras.Text = dgvProduto.SelectedRows[0].Cells[0].Value.ToString();  //PEGA O VALOR DO PRIMEIRO CAMPO DA TABELA(CODIGO POR EXEMPLO CASO TENHA)
-                txtNomeProd.Text = dgvProduto.SelectedRows[0].Cells[2].Value.ToString();//PEGA O O NOME E PASSAR NO DATAGRID
-                txtQtd.Text = dgvProduto.SelectedRows[0].Cells[3].Value.ToString();
-                txtValorUni.Text = dgvProduto.SelectedRows[0].Cells[4].Value.ToString();
+                txtNomeProd.Text = dgvProduto.SelectedRows[0].Cells[1].Value.ToString();//PEGA O O NOME E PASSAR NO DATAGRID
+                txtQtd.Text = dgvProduto.SelectedRows[0].Cells[2].Value.ToString();
+                txtValorUni.Text = dgvProduto.SelectedRows[0].Cells[3].Value.ToString();
 
                 //DESCONECTA O BANCO DE DADOS
                 con.DesConnectarBD();
@@ -277,6 +277,12 @@ namespace SystemArtEsportivos
 
 
             }
+        }
+
+
+        private void dgvProduto_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            carregarProdutos();
         }
     }
 }
